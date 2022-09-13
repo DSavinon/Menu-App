@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+<html lang="en">
+
+<head>
+    <title>Index</title>
+</head>
+
+<body>
+    {% block content %}
+    {% for alimento in lista_alimentos %}
+    <div class="row">
+        <div class="col-md-3 offset-md-2">
+            <br>
+            <img class="card" src="{{alimento.imagen_alimento}}" width="300" height="300" alt="Imagen alimento">
+        </div>
+        <div class="col-md-4">
+            <br>
+            <h2>{{alimento.nombre_alimento}}</h2>
+            <p>
+                {{alimento.desc_alimento}}
+                <br>
+                $ {{alimento.precio_alimento}}.00
+                <br>
+                {{alimento.nombre_usuario}}
+            </p>
+        </div>
+        <div class="col-md-2">
+            <br>
+            <a class="btn btn-success" href="{% url 'foods:detalles' alimento.id %}">Detalles</a>
+        </div>
+    </div>
+    {% endfor %}
+    {% endblock content %}
+</body>
+
+</html>

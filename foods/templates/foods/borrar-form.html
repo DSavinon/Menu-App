@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <P>SEGURO QUE DESEAS ELIMINAR {{alimento.nombre_alimento}}</P>
+        <button type"submit">Confirmar</button>
+    </form>
+{% endblock content %}

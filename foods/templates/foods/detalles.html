@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+<html lang="en">
+
+{% block titulo %}
+    <title>Detalles</title>
+{% endblock titulo %}
+
+<body>
+    {% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{detalles_alimentos.imagen_alimento}}" height="300px" class"card" alt="Imagen Commida">
+                </div>
+                <div class="col-md-6">
+                    <h1>{{detalles_alimentos.nombre_alimento}}</h1>
+                    <p>{{detalles_alimentos.desc_alimento}}</p><br>
+                    <p>$ {{detalles_alimentos.precio_alimento}}.00</p> 
+                    <a href="{% url 'foods:borrar_alimento' detalles_alimentos.id %}">Borrar</a>                   
+                </div>
+            </div>
+        </div>
+    {% endblock content %}
+</body>
+
+</html>
