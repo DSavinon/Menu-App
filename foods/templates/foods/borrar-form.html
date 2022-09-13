@@ -1,9 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method="POST">
-        {% csrf_token %}
-        <P>SEGURO QUE DESEAS ELIMINAR {{alimento.nombre_alimento}}</P>
-        <button type"submit">Confirmar</button>
-    </form>
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-4">
+            <div class="card">
+                <div class="card-header bg-info bg-gradient bg-opacity-50">
+                    <div class="card-title">
+                        Eliminar Alimento
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <p>Seguro que deseas eliminar {{alimento.nombre_alimento}}</p>
+                        <button class="btn btn-outline-info" type="submit">Eliminar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock content %}
