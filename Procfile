@@ -1,1 +1,1 @@
-web: gunicorn nombre food_site.wsgi --log-file -
+web: gunicorn food_site.wsgi --log-file -
